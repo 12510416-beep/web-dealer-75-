@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveMoto | Admin Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="admin-page">
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+        <div class="container nav-wrap">
+
+            <a class="brand" href="index.html">
+                <span class="brand-mark">D</span>
+
+                <span>
+                    Drive<span class="brand-accent">Moto</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+            </a>
+
+            <button
+                class="nav-toggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a data-nav href="index.html">Beranda</a>
+                <a data-nav href="katalog.html">Katalog</a>
+                <a data-nav href="simulasi.html">Simulasi Kredit</a>
+                <a data-nav href="test-drive.html">Test Drive</a>
+                <a data-nav href="promo.html">Promo</a>
+
+                <a class="nav-admin" data-nav href="admin.html">
+                    Admin <span>↗</span>
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+        <!-- LOGIN ADMIN -->
+        <section id="adminLoginPanel" class="admin-login-section">
+
+            <div class="admin-login-art">
+
+                <div class="login-orbit orbit-one"></div>
+                <div class="login-orbit orbit-two"></div>
+
+                <div class="login-art-content">
+
+                    <span class="eyebrow eyebrow-light">
+                        DRIVEMOTO MANAGEMENT
+                    </span>
+
+                    <h1>
+                        Kelola showroom<br>
+                        lebih <em>terarah.</em>
+                    </h1>
+
+                    <p>
+                        Dashboard pengelolaan stok motor, booking test drive,
+                        data pelanggan, dan promo dealer.
+                    </p>
+
+                    <div class="login-art-footer">
+                        <span>01 / ADMIN PORTAL</span>
+                        <span>SECURE ACCESS</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- FORM LOGIN -->
+            <div class="admin-login-form-wrap">
+
+                <form id="adminLoginForm" class="admin-login-card">
+
+                    <a class="back-home" href="index.html">
+                        ← Kembali ke website
+                    </a>
+
+                    <div class="login-logo">
+                        <span class="brand-mark">D</span>
+                    </div>
+
+                    <span class="eyebrow">ADMIN AREA</span>
+
+                    <h2>Selamat datang.</h2>
+
+                    <p class="muted">
+                        Masuk menggunakan akun admin untuk membuka dashboard.
+                    </p>
+
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+
+                        <input
+                            class="form-control"
+                            type="text"
+                            id="adminUsername"
+                            name="username"
+                            autocomplete="username"
+                            required
+                            placeholder="Masukkan username"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+
+                        <input
+                            class="form-control"
+                            type="password"
+                            id="adminPassword"
+                            name="password"
+                            autocomplete="current-password"
+                            required
+                            placeholder="Masukkan password"
+                        >
+                    </div>
+
+                    <p
+                        class="login-error"
+                        id="loginError"
+                        aria-live="polite"
+                    ></p>
+
+                    <button class="btn btn-primary btn-full" type="submit">
+                        Masuk ke dashboard <span>→</span>
+                    </button>
+
+                    <!-- AKUN DEMO -->
+                    <div class="demo-credential">
+                        <strong>Akun demo</strong>
+                        <span>Username: <b>admin</b></span>
+                        <span>Password: <b>drivemoto123</b></span>
+                    </div>
+
+                    <small class="login-security-note">
+                        Akun demo untuk presentasi. Sistem ini menggunakan
+                        penyimpanan browser.
+                    </small>
+
+                </form>
+
+            </div>
+        </section>
+
+
+        <!-- DASHBOARD ADMIN -->
+        <section id="adminDashboard" class="admin-dashboard" hidden>
+
+            <div class="container">
+
+                <!-- HEADER DASHBOARD -->
+                <div class="admin-topline">
+
+                    <div>
+                        <div class="breadcrumbs">
+                            <a href="index.html">Website</a>
+                            <span>/</span>
+                            <span>Dashboard admin</span>
+                        </div>
+
+                        <span class="eyebrow">
+                            DRIVEMOTO MANAGEMENT
+                        </span>
+
+                        <h1>
+                            Dashboard <em>admin.</em>
+                        </h1>
+
+                        <p>Kelola operasional dealer dari satu halaman.</p>
+                    </div>
+
+                    <button class="btn btn-outline-dark" id="adminLogout">
+                        Keluar ↗
+                    </button>
+
+                </div>
+
+
+                <!-- STATISTIK -->
+                <div class="admin-stat-grid">
+
+                    <article class="admin-stat">
+                        <span>Total model motor</span>
+                        <strong data-stat="bikes">0</strong>
+                        <small>Model di katalog</small>
+                        <i>▣</i>
+                    </article>
+
+                    <article class="admin-stat">
+                        <span>Total stok unit</span>
+                        <strong data-stat="stock">0</strong>
+                        <small>Jumlah unit tersedia</small>
+                        <i>◈</i>
+                    </article>
+
+                    <article class="admin-stat">
+                        <span>Booking test drive</span>
+                        <strong data-stat="bookings">0</strong>
+                        <small>Permintaan masuk</small>
+                        <i>◷</i>
+                    </article>
+
+                    <article class="admin-stat">
+                        <span>Data pelanggan</span>
+                        <strong data-stat="leads">0</strong>
+                        <small>Lead tersimpan</small>
+                        <i>♧</i>
+                    </article>
+
+                </div>
+
+
+                <!-- AREA KERJA ADMIN -->
+                <div class="admin-workspace">
+
+                    <!-- SIDEBAR -->
+                    <aside class="admin-sidebar">
+
+                        <span class="sidebar-label">MENU UTAMA</span>
+
+                        <button
+                            class="admin-tab selected"
+                            data-admin-tab="overview"
+                        >
+                            <span>▦</span> Ringkasan
+                        </button>
+
+                        <button
+                            class="admin-tab"
+                            data-admin-tab="inventory"
+                        >
+                            <span>◈</span> Inventaris motor
+                        </button>
+
+                        <button
+                            class="admin-tab"
+                            data-admin-tab="bookings"
+                        >
+                            <span>◷</span> Booking test drive
+                        </button>
+
+                        <button
+                            class="admin-tab"
+                            data-admin-tab="leads"
+                        >
+                            <span>♧</span> Data pelanggan
+                        </button>
+
+                        <button
+                            class="admin-tab"
+                            data-admin-tab="promos"
+                        >
+                            <span>✦</span> Kelola promo
+                        </button>
+
+                        <div class="sidebar-tip">
+                            <span>✦</span>
+                            <strong>Catatan admin</strong>
+
+                            <p>
+                                Pastikan data stok, harga, dan foto
+                                diperbarui secara berkala.
+                            </p>
+                        </div>
+
+                    </aside>
+
+
+                    <!-- KONTEN DASHBOARD -->
+                    <div class="admin-content">
+
+                        <!-- RINGKASAN -->
+                        <section
+                            data-admin-panel="overview"
+                            class="admin-panel"
+                        >
+
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <span class="eyebrow">OVERVIEW</span>
+                                    <h2>Ringkasan aktivitas</h2>
+                                </div>
+
+                                <span class="live-label">
+                                    <i></i> DATA BROWSER
+                                </span>
+                            </div>
+
+
+                            <div class="welcome-card">
+
+                                <div>
+                                    <span class="eyebrow eyebrow-light">
+                                        SELAMAT BEKERJA
+                                    </span>
+
+                                    <h3>Halo, Admin DriveMoto.</h3>
+
+                                    <p>
+                                        Pastikan setiap informasi katalog dan
+                                        permintaan pelanggan ditangani dengan baik.
+                                    </p>
+
+                                    <a
+                                        href="katalog.html"
+                                        class="btn btn-light btn-small"
+                                    >
+                                        Lihat katalog publik ↗
+                                    </a>
+                                </div>
+
+                                <div class="welcome-symbol">D</div>
+
+                            </div>
+
+
+                            <!-- MENU CEPAT -->
+                            <div class="quick-links">
+
+                                <button data-admin-tab="inventory">
+                                    <span>＋</span>
+                                    <strong>Tambah motor</strong>
+                                    <small>Perbarui katalog</small>
+                                </button>
+
+                                <button data-admin-tab="bookings">
+                                    <span>◷</span>
+                                    <strong>Cek booking</strong>
+                                    <small>Kelola jadwal</small>
+                                </button>
+
+                                <button data-admin-tab="leads">
+                                    <span>♧</span>
+                                    <strong>Lihat pelanggan</strong>
+                                    <small>Tindak lanjuti lead</small>
+                                </button>
+
+                            </div>
+
+
+                            <div class="admin-helper-note">
+                                <strong>Informasi penggunaan</strong>
+
+                                <p>
+                                    Perubahan data tersimpan pada browser
+                                    yang sedang digunakan. Untuk website
+                                    yang dipakai banyak perangkat, diperlukan
+                                    backend dan database online.
+                                </p>
+                            </div>
+
+                        </section>
+
+
+                        <!-- INVENTARIS MOTOR -->
+                        <section
+                            data-admin-panel="inventory"
+                            class="admin-panel"
+                            hidden
+                        >
+
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <span class="eyebrow">
+                                        KATALOG & PERSEDIAAN
+                                    </span>
+
+                                    <h2>Inventaris motor</h2>
+
+                                    <p class="muted">
+                                        Tambah motor, atur stok, unggah foto,
+                                        edit, atau hapus unit.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="admin-inventory-layout">
+
+                                <!-- FORM MOTOR -->
+                                <form id="bikeForm" class="admin-editor-card">
+
+                                    <div class="editor-heading">
+                                        <div>
+                                            <span class="eyebrow">DATA PRODUK</span>
+                                            <h3 id="bikeFormTitle">
+                                                Tambah motor baru
+                                            </h3>
+                                        </div>
+
+                                        <span class="editor-plus">＋</span>
+                                    </div>
+
+                                    <input
+                                        type="hidden"
+                                        name="id"
+                                        id="bikeId"
+                                    >
+
+                                    <div class="form-row">
+
+                                        <div class="form-group">
+                                            <label for="bikeName">
+                                                Nama motor *
+                                            </label>
+
+                                            <input
+                                                class="form-control"
+                                                id="bikeName"
+                                                name="name"
+                                                required
+                                                placeholder="Contoh: NMAX Turbo"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="bikeBrand">
+                                                Merek *
+                                            </label>
+
+                                            <input
+                                                class="form-control"
+                                                id="bikeBrand"
+                                                name="brand"
+                                                required
+                                                placeholder="Yamaha / Honda"
+                                            >
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-row">
+
+                                        <div class="form-group">
+                                            <label for="bikeType">Tipe *</label>
+
+                                            <select
+                                                class="form-control"
+                                                id="bikeType"
+                                                name="type"
+                                            >
+                                                <option>Matic</option>
+                                                <option>Sport</option>
+                                                <option>Bebek</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="bikeCC">
+                                                Kapasitas mesin (cc) *
+                                            </label>
+
+                                            <input
+                                                class="form-control"
+                                                id="bikeCC"
+                                                name="cc"
+                                                required
+                                                type="number"
+                                                min="1"
+                                                placeholder="155"
+                                            >
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-row">
+
+                                        <div class="form-group">
+                                            <label for="bikePrice">
+                                                Harga (Rp) *
+                                            </label>
+
+                                            <input
+                                                class="form-control"
+                                                id="bikePrice"
+                                                name="price"
+                                                required
+                                                type="number"
+                                                min="0"
+                                                placeholder="38000000"
+                                            >
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="bikeStock">
+                                                Jumlah stok unit *
+                                            </label>
+
+                                            <input
+                                                class="form-control"
+                                                id="bikeStock"
+                                                name="stock"
+                                                required
+                                                type="number"
+                                                min="0"
+                                                value="1"
+                                            >
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="bikeColors">
+                                            Pilihan warna
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="bikeColors"
+                                            name="colors"
+                                            placeholder="Hitam, Merah, Putih"
+                                        >
+
+                                        <small class="field-help">
+                                            Pisahkan setiap warna dengan tanda koma.
+                                        </small>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="bikeBadge">
+                                            Label produk
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            id="bikeBadge"
+                                            name="badge"
+                                            placeholder="Terlaris / Unit baru / Promo"
+                                        >
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="bikeDescription">
+                                            Deskripsi singkat
+                                        </label>
+
+                                        <textarea
+                                            class="form-control"
+                                            id="bikeDescription"
+                                            name="description"
+                                            rows="3"
+                                            placeholder="Tuliskan gambaran singkat motor..."
+                                        ></textarea>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="bikeImage">Foto motor</label>
+
+                                        <input
+                                            class="form-control file-control"
+                                            id="bikeImage"
+                                            name="imageFile"
+                                            type="file"
+                                            accept="image/png,image/jpeg,image/webp"
+                                        >
+
+                                        <small class="field-help">
+                                            Format JPG, PNG, atau WebP.
+                                            Foto akan dikecilkan otomatis
+                                            sebelum disimpan.
+                                        </small>
+                                    </div>
+
+
+                                    <button
+                                        class="btn btn-primary btn-full"
+                                        type="submit"
+                                    >
+                                        Simpan motor ke katalog <span>→</span>
+                                    </button>
+
+                                    <button
+                                        class="btn btn-text btn-full"
+                                        type="button"
+                                        id="cancelBikeEdit"
+                                        hidden
+                                    >
+                                        Batalkan edit
+                                    </button>
+
+                                </form>
+
+
+                                <!-- TABEL DAFTAR MOTOR -->
+                                <div class="admin-table-card">
+
+                                    <div class="table-card-heading">
+                                        <div>
+                                            <h3>Daftar motor</h3>
+                                            <p>
+                                                Semua unit yang tampil di
+                                                katalog publik.
+                                            </p>
+                                        </div>
+
+                                        <span
+                                            class="table-count"
+                                            data-stat="bikes"
+                                        >
+                                            0
+                                        </span>
+                                    </div>
+
+                                    <div class="table-scroll">
+
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Motor</th>
+                                                    <th>Mesin</th>
+                                                    <th>Harga</th>
+                                                    <th>Stok</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody id="adminBikeRows"></tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                        <!-- BOOKING TEST DRIVE -->
+                        <section
+                            data-admin-panel="bookings"
+                            class="admin-panel"
+                            hidden
+                        >
+
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <span class="eyebrow">RESERVASI ONLINE</span>
+                                    <h2>Booking test drive</h2>
+
+                                    <p class="muted">
+                                        Periksa permintaan jadwal dan perbarui
+                                        status konfirmasi.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-table-card">
+
+                                <div class="table-card-heading">
+                                    <div>
+                                        <h3>Permintaan test drive</h3>
+                                        <p>
+                                            Data yang dikirim melalui
+                                            formulir publik.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="table-scroll">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Pelanggan</th>
+                                                <th>Motor</th>
+                                                <th>Tanggal & waktu</th>
+                                                <th>Lokasi</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="bookingRows"></tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                        <!-- DATA PELANGGAN -->
+                        <section
+                            data-admin-panel="leads"
+                            class="admin-panel"
+                            hidden
+                        >
+
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <span class="eyebrow">
+                                        CUSTOMER RELATIONSHIP
+                                    </span>
+
+                                    <h2>Data pelanggan</h2>
+
+                                    <p class="muted">
+                                        Kelola pelanggan yang mengirim
+                                        permintaan melalui website.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="admin-table-card">
+
+                                <div class="table-card-heading">
+                                    <div>
+                                        <h3>Daftar leads masuk</h3>
+                                        <p>
+                                            Permintaan simulasi kredit dan
+                                            booking test drive.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="table-scroll">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Pelanggan</th>
+                                                <th>Jenis permintaan</th>
+                                                <th>Motor</th>
+                                                <th>Estimasi cicilan</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody id="leadRows"></tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                        </section>
+
+
+                        <!-- KELOLA PROMO -->
+                        <section
+                            data-admin-panel="promos"
+                            class="admin-panel"
+                            hidden
+                        >
+
+                            <div class="admin-panel-heading">
+                                <div>
+                                    <span class="eyebrow">KAMPANYE DEALER</span>
+                                    <h2>Kelola promo</h2>
+
+                                    <p class="muted">
+                                        Promo yang disimpan akan tampil
+                                        di beranda dan halaman Promo.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="promo-admin-layout">
+
+                                <!-- FORM PROMO -->
+                                <form id="promoForm" class="admin-editor-card">
+
+                                    <div class="editor-heading">
+                                        <div>
+                                            <span class="eyebrow">
+                                                PROGRAM PROMO
+                                            </span>
+
+                                            <h3>Tambah promo baru</h3>
+                                        </div>
+
+                                        <span class="editor-plus">✦</span>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="promoTitle">
+                                            Judul promo *
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            name="title"
+                                            id="promoTitle"
+                                            required
+                                            placeholder="Contoh: Promo akhir bulan"
+                                        >
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="promoDiscount">
+                                            Label penawaran *
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            name="discount"
+                                            id="promoDiscount"
+                                            required
+                                            placeholder="Contoh: DP mulai 15%"
+                                        >
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="promoDescription">
+                                            Deskripsi *
+                                        </label>
+
+                                        <textarea
+                                            class="form-control"
+                                            name="description"
+                                            id="promoDescription"
+                                            rows="3"
+                                            required
+                                            placeholder="Tuliskan detail singkat promo..."
+                                        ></textarea>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="promoValid">
+                                            Catatan periode / ketentuan
+                                        </label>
+
+                                        <input
+                                            class="form-control"
+                                            name="valid"
+                                            id="promoValid"
+                                            placeholder="Syarat dan ketentuan berlaku"
+                                        >
+                                    </div>
+
+
+                                    <button
+                                        class="btn btn-primary btn-full"
+                                        type="submit"
+                                    >
+                                        Publikasikan promo ↗
+                                    </button>
+
+                                </form>
+
+
+                                <!-- DAFTAR PROMO -->
+                                <div class="admin-table-card">
+
+                                    <div class="table-card-heading">
+                                        <div>
+                                            <h3>Promo ditampilkan</h3>
+                                            <p>
+                                                Daftar penawaran di halaman publik.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="admin-promo-list"
+                                        id="adminPromoRows"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-bottom">
+
+            <span>
+                © <span data-year></span> DriveMoto · Admin portal.
+            </span>
+
+            <span>Manage with care.</span>
+
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

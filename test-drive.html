@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveMoto | Booking Test Drive</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="site-header">
+
+        <div class="container nav-wrap">
+
+            <!-- Logo -->
+            <a class="brand" href="index.html">
+
+                <span class="brand-mark">D</span>
+
+                <span>
+                    Drive<span class="brand-accent">Moto</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+
+            </a>
+
+
+            <!-- Tombol Menu Mobile -->
+            <button
+                class="nav-toggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <!-- Menu Navigasi -->
+            <nav class="nav-links">
+
+                <a data-nav href="index.html">Beranda</a>
+
+                <a data-nav href="katalog.html">Katalog</a>
+
+                <a data-nav href="simulasi.html">
+                    Simulasi Kredit
+                </a>
+
+                <a data-nav href="test-drive.html">
+                    Test Drive
+                </a>
+
+                <a data-nav href="promo.html">Promo</a>
+
+                <a class="nav-admin" data-nav href="admin.html">
+                    Admin <span>↗</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= KONTEN UTAMA ================= -->
+    <main>
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="page-hero page-hero-small">
+
+            <div class="container">
+
+                <!-- Breadcrumb -->
+                <div class="breadcrumbs">
+
+                    <a href="index.html">Beranda</a>
+
+                    <span>/</span>
+
+                    <span>Test Drive</span>
+
+                </div>
+
+
+                <!-- Judul Halaman -->
+                <span class="eyebrow eyebrow-light">
+                    RASAKAN LANGSUNG
+                </span>
+
+                <h1>
+                    Kenali motormu<br>
+                    <em>sebelum memilih.</em>
+                </h1>
+
+                <p>
+                    Isi formulir untuk mengajukan jadwal mencoba
+                    motor pilihanmu di lokasi dealer.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= BOOKING SECTION ================= -->
+        <section class="section booking-section">
+
+            <div class="container booking-layout">
+
+                <!-- ================= INFORMASI BOOKING ================= -->
+                <div class="booking-intro">
+
+                    <span class="eyebrow">
+                        BOOKING TEST DRIVE
+                    </span>
+
+                    <h2>
+                        Satu langkah lebih dekat dengan
+                        <em>motor impian.</em>
+                    </h2>
+
+                    <p>
+                        Lengkapi data dan pilih waktu yang diinginkan.
+                        Tim DriveMoto akan menghubungi Anda untuk
+                        mengonfirmasi ketersediaan unit dan jadwal.
+                    </p>
+
+
+                    <!-- Langkah Booking -->
+                    <div class="booking-benefits">
+
+                        <!-- Langkah 1 -->
+                        <div>
+
+                            <span>01</span>
+
+                            <p>
+                                <strong>Pilih motor</strong>
+
+                                <small>
+                                    Tentukan unit yang ingin dicoba.
+                                </small>
+                            </p>
+
+                        </div>
+
+
+                        <!-- Langkah 2 -->
+                        <div>
+
+                            <span>02</span>
+
+                            <p>
+                                <strong>Tentukan jadwal</strong>
+
+                                <small>
+                                    Pilih tanggal serta waktu kunjungan.
+                                </small>
+                            </p>
+
+                        </div>
+
+
+                        <!-- Langkah 3 -->
+                        <div>
+
+                            <span>03</span>
+
+                            <p>
+                                <strong>Tunggu konfirmasi</strong>
+
+                                <small>
+                                    Admin akan menghubungi Anda.
+                                </small>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Jam Layanan Dealer -->
+                    <div class="booking-hours">
+
+                        <span class="hours-icon">◷</span>
+
+                        <div>
+
+                            <strong>Jam layanan dealer</strong>
+
+                            <small>
+                                Setiap hari · 09.00–17.00 WITA
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= FORM BOOKING ================= -->
+                <form
+                    id="testDriveForm"
+                    class="booking-form-card"
+                >
+
+                    <!-- Judul Formulir -->
+                    <div class="form-card-heading">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                FORMULIR ONLINE
+                            </span>
+
+                            <h3>Jadwalkan test drive</h3>
+
+                        </div>
+
+                        <span class="form-step">
+                            01 / 01
+                        </span>
+
+                    </div>
+
+
+                    <!-- Nama Lengkap -->
+                    <div class="form-group">
+
+                        <label for="testName">
+                            Nama lengkap *
+                        </label>
+
+                        <input
+                            class="form-control"
+                            id="testName"
+                            name="name"
+                            required
+                            placeholder="Masukkan nama lengkap"
+                        >
+
+                    </div>
+
+
+                    <!-- Nomor WhatsApp dan Email -->
+                    <div class="form-row">
+
+                        <!-- WhatsApp -->
+                        <div class="form-group">
+
+                            <label for="testPhone">
+                                Nomor WhatsApp *
+                            </label>
+
+                            <input
+                                class="form-control"
+                                id="testPhone"
+                                name="phone"
+                                type="tel"
+                                required
+                                placeholder="08xxxxxxxxxx"
+                            >
+
+                        </div>
+
+
+                        <!-- Email -->
+                        <div class="form-group">
+
+                            <label for="testEmail">
+                                Email
+                            </label>
+
+                            <input
+                                class="form-control"
+                                id="testEmail"
+                                name="email"
+                                type="email"
+                                placeholder="nama@email.com"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Pilihan Motor -->
+                    <div class="form-group">
+
+                        <label for="testBike">
+                            Motor yang ingin dicoba *
+                        </label>
+
+                        <select
+                            class="form-control"
+                            id="testBike"
+                            name="bike"
+                            required
+                        ></select>
+
+                    </div>
+
+
+                    <!-- Tanggal dan Waktu -->
+                    <div class="form-row">
+
+                        <!-- Tanggal -->
+                        <div class="form-group">
+
+                            <label for="testDate">
+                                Tanggal pilihan *
+                            </label>
+
+                            <input
+                                class="form-control"
+                                id="testDate"
+                                name="date"
+                                type="date"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Waktu -->
+                        <div class="form-group">
+
+                            <label for="testTime">
+                                Waktu pilihan *
+                            </label>
+
+                            <select
+                                class="form-control"
+                                id="testTime"
+                                name="time"
+                                required
+                            >
+
+                                <option value="">
+                                    Pilih waktu
+                                </option>
+
+                                <option>09.00–10.00</option>
+
+                                <option>10.00–11.00</option>
+
+                                <option>11.00–12.00</option>
+
+                                <option>13.00–14.00</option>
+
+                                <option>14.00–15.00</option>
+
+                                <option>15.00–16.00</option>
+
+                                <option>16.00–17.00</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Lokasi Dealer -->
+                    <div class="form-group">
+
+                        <label for="testLocation">
+                            Lokasi dealer
+                        </label>
+
+                        <select
+                            class="form-control"
+                            id="testLocation"
+                            name="location"
+                        >
+
+                            <option>
+                                Showroom DriveMoto
+                            </option>
+
+                            <option>
+                                Lokasi dealer terdekat (konfirmasi admin)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Catatan Tambahan -->
+                    <div class="form-group">
+
+                        <label for="testNote">
+                            Catatan tambahan
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="testNote"
+                            name="note"
+                            rows="3"
+                            placeholder="Tuliskan pertanyaan atau kebutuhan khusus (opsional)"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Tombol Kirim -->
+                    <button
+                        class="btn btn-primary btn-full"
+                        type="submit"
+                    >
+                        Kirim permintaan booking <span>→</span>
+                    </button>
+
+
+                    <!-- Informasi Privasi -->
+                    <small class="form-privacy">
+
+                        Dengan mengirim formulir, Anda mengizinkan
+                        tim dealer menghubungi untuk konfirmasi jadwal.
+
+                    </small>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <!-- Logo Footer -->
+            <a class="brand brand-footer" href="index.html">
+
+                <span class="brand-mark">D</span>
+
+                <span>
+                    Drive<span class="brand-accent">Moto</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+
+            </a>
+
+
+            <!-- Deskripsi Footer -->
+            <p>
+                Coba langsung, pilih dengan yakin.
+            </p>
+
+
+            <!-- Link Footer -->
+            <div class="footer-links">
+
+                <a href="katalog.html">Katalog</a>
+
+                <a href="simulasi.html">
+                    Simulasi Kredit
+                </a>
+
+                <a href="promo.html">Promo</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="container footer-bottom">
+
+            <span>
+                © <span data-year></span> DriveMoto.
+            </span>
+
+            <span>
+                Ride your next chapter.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>

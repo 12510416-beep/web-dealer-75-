@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DriveMoto | Simulasi Kredit</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="site-header">
+
+        <div class="container nav-wrap">
+
+            <!-- Logo -->
+            <a class="brand" href="index.html">
+
+                <span class="brand-mark">D</span>
+
+                <span>
+                    Drive<span class="brand-accent">Moto</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+
+            </a>
+
+
+            <!-- Tombol Menu Mobile -->
+            <button
+                class="nav-toggle"
+                aria-label="Buka menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <!-- Menu Navigasi -->
+            <nav class="nav-links">
+
+                <a data-nav href="index.html">Beranda</a>
+
+                <a data-nav href="katalog.html">Katalog</a>
+
+                <a data-nav href="simulasi.html">
+                    Simulasi Kredit
+                </a>
+
+                <a data-nav href="test-drive.html">
+                    Test Drive
+                </a>
+
+                <a data-nav href="promo.html">Promo</a>
+
+                <a class="nav-admin" data-nav href="admin.html">
+                    Admin <span>↗</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= KONTEN UTAMA ================= -->
+    <main>
+
+        <!-- ================= PAGE HERO ================= -->
+        <section class="page-hero page-hero-small">
+
+            <div class="container">
+
+                <!-- Breadcrumb -->
+                <div class="breadcrumbs">
+
+                    <a href="index.html">Beranda</a>
+
+                    <span>/</span>
+
+                    <span>Simulasi Kredit</span>
+
+                </div>
+
+
+                <!-- Judul Halaman -->
+                <span class="eyebrow eyebrow-light">
+                    RENCANAKAN PEMBELIANMU
+                </span>
+
+                <h1>
+                    Hitung cicilan,<br>
+                    <em>atur rencana.</em>
+                </h1>
+
+                <p>
+                    Perkirakan uang muka dan angsuran bulanan
+                    sebelum mengambil keputusan.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SIMULASI KREDIT ================= -->
+        <section class="section finance-section">
+
+            <div class="container finance-layout">
+
+                <!-- ================= FORM SIMULASI ================= -->
+                <div class="finance-form-card">
+
+                    <span class="eyebrow">
+                        KALKULATOR PEMBIAYAAN
+                    </span>
+
+                    <h2>
+                        Atur simulasi <em>kredit.</em>
+                    </h2>
+
+                    <p class="muted">
+                        Sesuaikan pilihan motor, uang muka, dan tenor
+                        untuk melihat estimasi cicilan.
+                    </p>
+
+
+                    <!-- Pilihan Motor -->
+                    <div class="form-group">
+
+                        <label for="financeBike">
+                            Pilih motor
+                        </label>
+
+                        <select
+                            id="financeBike"
+                            class="form-control"
+                        ></select>
+
+                    </div>
+
+
+                    <!-- Harga Motor -->
+                    <div class="price-highlight">
+
+                        <span>Harga motor</span>
+
+                        <strong id="financePrice">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Pengaturan DP -->
+                    <div class="form-group slider-group">
+
+                        <div class="label-line">
+
+                            <label for="dpRange">
+                                Uang muka (DP)
+                            </label>
+
+                            <strong id="dpValue">
+                                20%
+                            </strong>
+
+                        </div>
+
+
+                        <input
+                            id="dpRange"
+                            type="range"
+                            min="10"
+                            max="70"
+                            step="5"
+                            value="20"
+                        >
+
+
+                        <!-- Batas Persentase DP -->
+                        <div class="range-caption">
+
+                            <span>10%</span>
+
+                            <span>70%</span>
+
+                        </div>
+
+
+                        <!-- Hasil DP -->
+                        <div class="result-line">
+
+                            <span>Estimasi DP</span>
+
+                            <b id="dpAmount">
+                                Rp0
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tenor dan Bunga -->
+                    <div class="form-row">
+
+                        <!-- Lama Cicilan -->
+                        <div class="form-group">
+
+                            <label for="financeTenor">
+                                Lama cicilan
+                            </label>
+
+                            <select
+                                id="financeTenor"
+                                class="form-control"
+                            >
+
+                                <option value="12">
+                                    12 bulan
+                                </option>
+
+                                <option value="24">
+                                    24 bulan
+                                </option>
+
+                                <option value="36" selected>
+                                    36 bulan
+                                </option>
+
+                                <option value="48">
+                                    48 bulan
+                                </option>
+
+                                <option value="60">
+                                    60 bulan
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- Bunga Kredit -->
+                        <div class="form-group">
+
+                            <label for="financeInterest">
+                                Bunga flat / tahun
+                            </label>
+
+                            <div class="input-suffix">
+
+                                <input
+                                    id="financeInterest"
+                                    class="form-control"
+                                    type="number"
+                                    min="0"
+                                    max="30"
+                                    step="0.5"
+                                    value="8"
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Catatan Simulasi -->
+                    <div class="finance-note">
+
+                        Perhitungan ini merupakan estimasi sederhana
+                        dengan metode bunga flat. Nilai akhir dapat
+                        berbeda sesuai kebijakan leasing, biaya
+                        administrasi, asuransi, dan persetujuan
+                        pembiayaan.
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= HASIL SIMULASI ================= -->
+                <aside class="finance-result">
+
+                    <!-- Bagian Atas Hasil -->
+                    <div class="result-top">
+
+                        <span class="eyebrow eyebrow-light">
+                            HASIL SIMULASI
+                        </span>
+
+                        <span class="result-dot">
+                            LIVE ESTIMATE
+                        </span>
+
+                    </div>
+
+
+                    <!-- Cicilan Bulanan -->
+                    <p>
+                        Estimasi cicilan per bulan
+                    </p>
+
+                    <h2 id="monthlyAmount">
+                        Rp0
+                    </h2>
+
+
+                    <div class="result-divider"></div>
+
+
+                    <!-- Ringkasan Kredit -->
+                    <div class="result-detail">
+
+                        <span>Ringkasan</span>
+
+                        <strong id="financeSummary">
+                            Motor · 36 bulan
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Total Pembayaran -->
+                    <div class="result-detail">
+
+                        <span>
+                            Total pembayaran (estimasi)
+                        </span>
+
+                        <strong id="financeTotal">
+                            Rp0
+                        </strong>
+
+                    </div>
+
+
+                    <!-- Keterangan Hasil -->
+                    <div class="result-disclaimer">
+
+                        Angka di atas hanya simulasi dan bukan
+                        penawaran pembiayaan yang mengikat.
+
+                    </div>
+
+
+                    <!-- ================= FORM PERMINTAAN SALES ================= -->
+                    <form
+                        id="financeLeadForm"
+                        class="finance-lead-form"
+                    >
+
+                        <h3>
+                            Minta sales menghubungi saya
+                        </h3>
+
+
+                        <!-- Data Tersembunyi -->
+                        <input
+                            type="hidden"
+                            name="bike"
+                            id="financeLeadBike"
+                        >
+
+                        <input
+                            type="hidden"
+                            name="monthly"
+                            id="financeLeadMonthly"
+                        >
+
+
+                        <!-- Nama Lengkap -->
+                        <div class="form-group">
+
+                            <label for="financeName">
+                                Nama lengkap
+                            </label>
+
+                            <input
+                                class="form-control"
+                                name="name"
+                                id="financeName"
+                                required
+                                placeholder="Nama Anda"
+                            >
+
+                        </div>
+
+
+                        <!-- Nomor WhatsApp -->
+                        <div class="form-group">
+
+                            <label for="financePhone">
+                                Nomor WhatsApp
+                            </label>
+
+                            <input
+                                class="form-control"
+                                name="phone"
+                                id="financePhone"
+                                required
+                                type="tel"
+                                placeholder="08xxxxxxxxxx"
+                            >
+
+                        </div>
+
+
+                        <!-- Tombol Kirim -->
+                        <button
+                            class="btn btn-primary btn-full"
+                            type="submit"
+                        >
+                            Kirim permintaan <span>→</span>
+                        </button>
+
+                    </form>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <!-- Logo Footer -->
+            <a class="brand brand-footer" href="index.html">
+
+                <span class="brand-mark">D</span>
+
+                <span>
+                    Drive<span class="brand-accent">Moto</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+
+            </a>
+
+
+            <!-- Deskripsi Footer -->
+            <p>
+                Rencanakan pembelian dengan lebih percaya diri.
+            </p>
+
+
+            <!-- Link Footer -->
+            <div class="footer-links">
+
+                <a href="katalog.html">Katalog</a>
+
+                <a href="test-drive.html">
+                    Test Drive
+                </a>
+
+                <a href="promo.html">Promo</a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Copyright -->
+        <div class="container footer-bottom">
+
+            <span>
+                © <span data-year></span> DriveMoto.
+            </span>
+
+            <span>
+                Ride your next chapter.
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script src="js/app.js"></script>
+
+</body>
+</html>
