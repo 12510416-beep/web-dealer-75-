@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Booking Servis — LavangraDealer, showroom motor digital.">
+
+    <title>LavangraDealer | Booking Servis</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container nav-wrap">
+
+            <a class="brand" href="index.html">
+                <span class="brand-mark">L</span>
+                <span>
+                    Lavangra<span class="brand-accent">Dealer</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+            </a>
+
+            <button class="nav-toggle" aria-label="Buka menu" aria-expanded="false">
+                ☰
+            </button>
+
+            <nav class="nav-links">
+                <a data-nav href="index.html">Beranda</a>
+                <a data-nav href="katalog.html">Katalog</a>
+                <a data-nav href="simulasi.html">Simulasi Kredit</a>
+                <a data-nav href="test-drive.html">Test Drive</a>
+                <a data-nav href="promo.html">Promo</a>
+                <a class="nav-admin" data-nav href="admin.html">
+                    Admin <span>↗</span>
+                </a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="page-hero page-hero-small">
+            <div class="container">
+
+                <div class="breadcrumbs">
+                    <a href="index.html">Beranda</a>
+                    <span>/</span>
+                    <span>Booking Servis</span>
+                </div>
+
+                <span class="eyebrow eyebrow-light">LAVANGRADEALER</span>
+
+                <h1>Booking Servis</h1>
+
+                <p>
+                    Informasi dan layanan untuk membantu perjalanan memilih kendaraan yang tepat.
+                </p>
+
+            </div>
+        </section>
+
+        <section class="content-page">
+            <div class="container">
+
+                <div class="content-head">
+                    <span class="eyebrow">PERAWATAN LEBIH TERENCANA</span>
+
+                    <h1>Booking <em>servis.</em></h1>
+
+                    <p>
+                        Isi formulir untuk mengajukan jadwal servis. Admin akan menghubungi
+                        untuk mengonfirmasi ketersediaan waktu.
+                    </p>
+                </div>
+
+                <div class="form-layout">
+
+                    <form id="serviceBookingForm" class="simple-form">
+
+                        <h2>Formulir booking servis</h2>
+
+                        <div class="form-group">
+                            <label>Nama lengkap *</label>
+                            <input
+                                class="form-control"
+                                name="name"
+                                required
+                                placeholder="Nama Anda">
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label>Nomor telepon *</label>
+                                <input
+                                    class="form-control"
+                                    name="phone"
+                                    required
+                                    inputmode="tel"
+                                    placeholder="08xxxxxxxxxx">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Motor *</label>
+                                <select class="form-control" name="bike" required>
+                                    <option value="">Pilih motor</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label>Jenis layanan *</label>
+                                <select class="form-control" name="service" required>
+                                    <option value="">Pilih layanan</option>
+                                    <option>Servis berkala</option>
+                                    <option>Ganti oli</option>
+                                    <option>Pemeriksaan rem dan ban</option>
+                                    <option>Pemeriksaan CVT</option>
+                                    <option>Keluhan teknis lainnya</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Tanggal *</label>
+                                <input
+                                    class="form-control"
+                                    type="date"
+                                    name="date"
+                                    required>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Waktu yang diinginkan *</label>
+                            <select class="form-control" name="time" required>
+                                <option value="">Pilih waktu</option>
+                                <option>09.00 - 11.00</option>
+                                <option>11.00 - 13.00</option>
+                                <option>13.00 - 15.00</option>
+                                <option>15.00 - 17.00</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Keluhan / catatan</label>
+                            <textarea
+                                class="form-control"
+                                name="note"
+                                placeholder="Tuliskan keluhan atau kebutuhan servis"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary btn-full" type="submit">
+                            Kirim permintaan servis ↗
+                        </button>
+
+                    </form>
+
+                    <aside class="form-note">
+
+                        <span class="eyebrow eyebrow-light">INFORMASI SERVIS</span>
+
+                        <h2>Perawatan tepat waktu.</h2>
+
+                        <p>
+                            Permintaan yang dikirim akan tercatat pada data pelanggan
+                            di dashboard admin.
+                        </p>
+
+                        <ul>
+                            <li>Pengajuan jadwal belum menjadi konfirmasi final.</li>
+                            <li>Admin akan menghubungi untuk memastikan jadwal.</li>
+                            <li>Ikuti buku panduan kendaraan untuk interval servis.</li>
+                        </ul>
+
+                        <a class="btn btn-light btn-small" href="kontak.html">
+                            Butuh bantuan? Hubungi kami
+                        </a>
+
+                    </aside>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-main">
+
+            <a class="brand brand-footer" href="index.html">
+                <span class="brand-mark">L</span>
+                <span>
+                    Lavangra<span class="brand-accent">Dealer</span>
+                    <small>RIDE YOUR NEXT</small>
+                </span>
+            </a>
+
+            <p>
+                Temukan motor, rencanakan pembelian, dan nikmati layanan dealer dalam satu tempat.
+            </p>
+
+            <div class="footer-links footer-links-expanded">
+                <a href="index.html">Beranda</a>
+                <a href="katalog.html">Katalog</a>
+                <a href="detail-motor.html">Detail Motor</a>
+                <a href="bandingkan.html">Bandingkan</a>
+                <a href="favorit.html">Favorit</a>
+                <a href="simulasi.html">Simulasi Kredit</a>
+                <a href="test-drive.html">Test Drive</a>
+                <a href="promo.html">Promo</a>
+                <a href="layanan.html">Layanan</a>
+                <a href="booking-servis.html">Booking Servis</a>
+                <a href="artikel.html">Artikel</a>
+                <a href="detail-artikel.html">Detail Artikel</a>
+                <a href="tentang.html">Tentang</a>
+                <a href="kontak.html">Kontak</a>
+                <a href="admin.html">Admin</a>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            <span>© <span data-year></span> LavangraDealer.</span>
+            <span>Ride your next chapter.</span>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
